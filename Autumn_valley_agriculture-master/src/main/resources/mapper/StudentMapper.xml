@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.autumn_valley_agriculture.mapper.BusinesssysMapper">
+    <select id="validate" resultType="Userinfo">
+        select * from userinfo where account=#{user} and password=#{pwd}
+    </select>
+    <select id="selUser" resultType="Userinfo">
+        select * from userinfo where account=#{user}
+    </select>
+    <select id="getPuser" resultType="Userinfo">
+        select * from userinfo
+    </select>
+    <select id="selNameVal" resultType="Userinfo">
+        select * from userinfo where name like concat('%',#{val},'%') or account like concat('%',#{val},'%')
+    </select>
+</mapper>
